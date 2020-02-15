@@ -2,7 +2,6 @@
 layout: post
 title: "Love is in the Air"
 date: 2020-02-14 17:55 -0600
-permalink: love-is-in-the-air
 ---
 
 Happy Valentine's day! Today is special for because it marks the first day that I will again be posting blogs.  Love is in the air because I finally got a chance to get around to setting up my own blog again after a long haitus.
