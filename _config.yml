@@ -1,3 +1,4 @@
 theme: jekyll-theme-minimal
 title: "William Barela's Blogspot"
 description: "williambarela.com/blog is meant to serve a treasure trove of knowledge on how to program both front-end and back-end websites, as well as provide insights into DevOps"
+permalink: /blog/:title
