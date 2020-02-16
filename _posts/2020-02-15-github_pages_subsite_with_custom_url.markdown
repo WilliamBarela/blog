@@ -87,9 +87,9 @@ permalink: /posts/:year/:month/:day/:title
 So, here we have set a site variable for the URL for our site. This will be the address which is prepended to the blog posts when set the href for the posts as follows:
 
 ```
-{% raw %]
+{% raw %}
 {{ post.url | prepend:site.url }}
-{% endraw %]
+{% endraw %}
 ```
 
 And then lastly, the permalink is set to `/posts` followed by the year, month, day and title of the blog to keep a RESTful structure. So now, you have a working blog which belongs to a dedicated repo on GitHub and it serves off of your website! _Yah!_
