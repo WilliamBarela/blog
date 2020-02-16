@@ -57,8 +57,6 @@ layout: default
 title: Posts
 ---
 {% raw %}
-{% comment %}
-
 <h1>{{ page.title }}</h1>
 <ul class="posts">
 
@@ -69,15 +67,13 @@ title: Posts
     </li>
   {% endfor %}
 </ul>
-
-{% endcomment %}
 {% endraw %}
 ```
 
 The index page of `https://williambarela.github.io/blog` will redirect to `https://williambarela.com/blog`. However, when you try to click one of the posts, the hyperlink is not correct because it is routing off of the base url of the site like this: `https://williambarela.com/2020/01/01/some_blog_title` while it should be like this: `https://williambarela.com/blog/2020/01/01/some_blog_title`.
 
 This is because as we can see, the href for each post is pointing to post.url which expands to `/2020/01/01/some_blog_title`.
-To fix this, we should set the full url in the `_config.yml` file and prepend it to the href of each post by setting the href to `post.url | prepend:site.url`. The changes in the `_config.yml` page which need to be made to fix this is as follows:
+To fix this, we should set the full url in the `_config.yml` file and prepend it to the href of each post by setting the href to `{% raw %}{{ post.url | prepend:site.url }}{% endraw %}`. The changes in the `_config.yml` page which need to be made to fix this is as follows:
 
 ```yml
 theme: jekyll-theme-minimal
@@ -91,7 +87,9 @@ permalink: /posts/:year/:month/:day/:title
 So, here we have set a site variable for the URL for our site. This will be the address which is prepended to the blog posts when set the href for the posts as follows:
 
 ```
-post.url | prepend:site.url
+{% raw %]
+{{ post.url | prepend:site.url }}
+{% endraw %]
 ```
 
 And then lastly, the permalink is set to `/posts` followed by the year, month, day and title of the blog to keep a RESTful structure. So now, you have a working blog which belongs to a dedicated repo on GitHub and it serves off of your website! _Yah!_
