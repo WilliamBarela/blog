@@ -56,6 +56,9 @@ Again, since the intent is to have the blog home page with the posts at `https:/
 layout: default
 title: Posts
 ---
+{% raw %}
+{% comment %}
+
 <h1>{{ page.title }}</h1>
 <ul class="posts">
 
@@ -66,6 +69,9 @@ title: Posts
     </li>
   {% endfor %}
 </ul>
+
+{% endcomment %}
+{% endraw %}
 ```
 
 The index page of `https://williambarela.github.io/blog` will redirect to `https://williambarela.com/blog`. However, when you try to click one of the posts, the hyperlink is not correct because it is routing off of the base url of the site like this: `https://williambarela.com/2020/01/01/some_blog_title` while it should be like this: `https://williambarela.com/blog/2020/01/01/some_blog_title`.
